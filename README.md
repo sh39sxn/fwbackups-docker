@@ -1,5 +1,6 @@
 # fwbackups-docker
 This repo contains scripts and a Dockerfile for running fwbackups in Docker (Ubuntu 20.04)
+As it can be difficult to get fwbackups installed in newer Ubuntu versions (meaning >=16.04) I created a Docker Container.
 
 ### Prerequisites
 
@@ -25,7 +26,7 @@ docker build -t fwbackups-docker:latest .
 ```
 
 
-### Configiration of fwbackups
+### Configuration of fwbackups
 
 fwbackups provides the possiblity to configure the backups via conf files.
 As an example the [backupSet1.conf](backupSet1.conf) is included in this repo.
