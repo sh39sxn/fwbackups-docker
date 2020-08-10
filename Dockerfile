@@ -60,13 +60,13 @@ RUN chmod 777 -R /home/user/.fwbackups/
 CMD fwbackups-run backupSet1
 
 
-# docker build --tag sh39sxn/fwbackups:latest .
+# docker build --tag sh39sxn/fwbackups-docker:latest .
 
 # overwrite entrypoint for debugging
-# docker run -it -e LOCAL_USER_ID=`id -u $USER` --entrypoint="bash" -v /$(pwd)/backups:/backups -v /:/filesystem sh39sxn/fwbackups:latest
+# docker run -it -e LOCAL_USER_ID=`id -u $USER` --entrypoint="bash" -v /$(pwd)/backups:/backups -v /:/filesystem sh39sxn/fwbackups-docker:latest
 
 #backup "/"
-# docker run -it -e LOCAL_USER_ID=`id -u $USER` -v /$(pwd)/backups:/backups -v /:/filesystem sh39sxn/fwbackups:latest
+# docker run -it -e LOCAL_USER_ID=`id -u $USER` -v /$(pwd)/backups:/backups -v /:/filesystem sh39sxn/fwbackups-docker:latest
 
 # crontab entry
-# 21 17 * * * cd ~/workspace/fwbackups-docker && docker run -i -e LOCAL_USER_ID=`id -u $USER` -v /$(pwd)/backups:/backups -v /:/filesystem sh39sxn/fwbackups:latest > /var/log/cron.log 2>&1
+# 21 17 * * * cd ~/workspace/fwbackups-docker && docker run -i -e LOCAL_USER_ID=`id -u $USER` -v /$(pwd)/backups:/backups -v /:/filesystem sh39sxn/fwbackups-docker:latest > /var/log/cron.log 2>&1
